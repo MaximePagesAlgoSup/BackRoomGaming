@@ -37,10 +37,26 @@ int main()
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
+
+    //Main Game Loop
     while (!glfwWindowShouldClose(window))
     {
+        //Handle Inputs event
+        
+        //Handle Game Logic Events
+
+        //Handle Physics
+
+        //Update positions
+
+        //Draw Frame
+
+
+        //display generated frame
         glfwSwapBuffers(window);
+        //getevents such as input that happened during the frame to prepare for the next one
         glfwPollEvents();
+
     }
 
     glfwTerminate();
