@@ -134,10 +134,18 @@
     <ClInclude Include="include\glad.h" />
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\khrplatform.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\level.h" />
+    <ClInclude Include="src\menu.h" />
+    <ClInclude Include="src\player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\level.cpp" />
+    <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
