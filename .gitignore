@@ -1,3 +1,6 @@
+glfw/
+
+
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
@@ -975,7 +978,7 @@ _deps
 *.lai
 *.la
 *.a
-*.lib
+
 
 # Executables
 *.exe
@@ -1005,7 +1008,6 @@ _deps
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
