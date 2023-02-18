@@ -131,20 +131,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\game.h" />
     <ClInclude Include="include\glad.h" />
     <ClInclude Include="include\glfw3.h" />
+    <ClInclude Include="include\guard.h" />
     <ClInclude Include="include\khrplatform.h" />
-    <ClInclude Include="src\game.h" />
-    <ClInclude Include="src\level.h" />
-    <ClInclude Include="src\menu.h" />
-    <ClInclude Include="src\player.h" />
+    <ClInclude Include="include\level.h" />
+    <ClInclude Include="include\menu.h" />
+    <ClInclude Include="include\pc.h" />
+    <ClInclude Include="include\player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\guard.cpp" />
     <ClCompile Include="src\level.cpp" />
     <ClCompile Include="src\menu.cpp" />
+    <ClCompile Include="src\pc.cpp" />
     <ClCompile Include="src\player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -24,16 +24,22 @@
     <ClInclude Include="include\glfw3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\game.h">
+    <ClInclude Include="include\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\level.h">
+    <ClInclude Include="include\level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\menu.h">
+    <ClInclude Include="include\menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\player.h">
+    <ClInclude Include="include\player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,6 +60,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\guard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
