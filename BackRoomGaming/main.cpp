@@ -7,21 +7,22 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    int viewport_width;
-    int viewport_height;
-    int viewport_x = 0;
-    int viewport_y = 0;
-    viewport_width = width;
-    viewport_height = height;
-    if (width * 9 > height * 16) {
-        viewport_width = height * 16 / 9;
-        viewport_x = (width - viewport_width) / 2;
-    }
-    else if (width * 9 < height * 16) {
-        viewport_height = width * 9 / 16;
-        viewport_y = (height - viewport_height) / 2;
-    }
-    glViewport(viewport_x, viewport_y, viewport_width, viewport_height);
+    // force the 16/9 aspect ratio
+    if (width / 16 != height / 9)
+    {
+        if (width / 16 > height / 9)
+        {
+			width = height * 16 / 9;
+		}
+        else
+        {
+			height = width * 9 / 16;
+		}
+		glfwSetWindowSize(window, width, height);
+	}
+
+    glViewport(0, 0, width, height);
+    glScissor(0, 0, width, height);
 }
 
 
@@ -47,7 +48,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(1600, 900, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -62,17 +63,19 @@ int main()
         return -1;
     }
 
-    glViewport(0, 0, 800, 600);
+    glViewport(0, 0, 1600, 900);
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
     float vertices[] = {
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f
+         -0.1f, -0.1f, 0.0f,
+         0.1f, -0.1f, 0.0f,
+         0.0f,  0.1f, 0.0f
     };
 
+    while (!glfwWindowShouldClose(window))
+    {
 
     unsigned int VBO;
     
@@ -124,8 +127,6 @@ int main()
 
     glClearColor(BACKGROUND);
     //Main Game Loop
-    while (!glfwWindowShouldClose(window))
-    {
         //Handle Inputs event
         
         //Handle Game Logic Events
@@ -135,6 +136,24 @@ int main()
         //Update positions
 
         //Draw Frame
+
+        if (glfwGetKey(window, GLFW_KEY_LEFT))
+             for (int i = 0; i < 9; i++)
+                if(i!=1 && i!=4 && i!=7)
+                    vertices[i] -= 0.02f;
+        if (glfwGetKey(window, GLFW_KEY_RIGHT))
+            for (int i = 0; i < 9; i++)
+                if (i != 1 && i != 4 && i != 7)
+                    vertices[i] += 0.02f;
+        if(glfwGetKey(window, GLFW_KEY_UP))
+			for (int i = 0; i < 9; i++)
+				if (i != 0 && i != 3 && i != 6)
+					vertices[i] += 0.02f;
+        if (glfwGetKey(window, GLFW_KEY_DOWN))
+            for (int i = 0; i < 9; i++)
+                if (i != 0 && i != 3 && i != 6)
+					vertices[i] -= 0.02f;
+
 
 
         // 4. draw the object
